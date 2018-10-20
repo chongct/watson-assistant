@@ -10,6 +10,10 @@ const resolvers = {
   Intent: {
     intent: (root) => root.intent,
     description: (root) => root.description
+  },
+  Output: {
+    text: (root) => root.text,
+    conversationId: (root) => root.conversationId
   }
 }
 

@@ -4,12 +4,20 @@ type Query {
 }
 
 type Mutation {
-  createIntents(intent: String!, description: String!, examples: [IntentExample]): String!
+  createIntent(intent: String!, description: String, examples: [IntentExample!]!): String
+  updateIntent(intent: String!, newIntent: String, newDescription: String, newExamples: [IntentExample]): Intent
+  deleteIntent(intent: String!): Boolean
+  sendMessage(input: String!): Output!
 }
 
 type Intent {
   intent: String!
   description: String!
+}
+
+type Output {
+  text: String!
+  conversationId: ID
 }
 
 input IntentExample {
