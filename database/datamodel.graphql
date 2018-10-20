@@ -1,0 +1,6 @@
+type Intent {
+  id: ID! @unique
+  intent: String!
+  description: String!
+  createdAt: DateTime!
+}

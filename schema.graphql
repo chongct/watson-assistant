@@ -1,0 +1,17 @@
+type Query {
+  info: String!
+  listIntents: [Intent!]!
+}
+
+type Mutation {
+  createIntents(intent: String!, description: String!, examples: [IntentExample]): String!
+}
+
+type Intent {
+  intent: String!
+  description: String!
+}
+
+input IntentExample {
+  text: String!
+}
