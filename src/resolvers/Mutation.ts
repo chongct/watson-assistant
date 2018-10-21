@@ -75,7 +75,7 @@ class WatsonApiCall {
         if (err) {
           reject(err);
         } else {
-          console.log(response);
+          // console.log(response);
           resolve({
             text: response['output']['text'][0],
             conversationId: response['context']['conversation_id']
