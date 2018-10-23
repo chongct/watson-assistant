@@ -75,7 +75,6 @@ class WatsonApiCall {
         if (err) {
           reject(err);
         } else {
-          // console.log(response);
           resolve({
             text: response['output']['text'][0],
             conversationId: response['context']['conversation_id']
@@ -91,6 +90,8 @@ let watsonApiCall = new WatsonApiCall(assistant, params);
 // mutation resolvers
 async function createIntent(parent, args, context, info) {
   let { intent, description, examples } = args;
+  // API does not accept spaces for intent, replace with underscore
+  intent = intent.replace(/\s+/g, '_');
   return await watsonApiCall.apiCreate(intent, description, examples);
 }
 

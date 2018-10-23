@@ -7,17 +7,15 @@ function apiList() {
       if (err) {
         reject(err);
       } else {
-        // console.log('1');
         resolve(response['intents']);
       }
     });
   });
 }
 
+// query resolver
 async function listIntents() {
-  let intents = await apiList();
-  // console.log('2');
-  return intents;
+  return await apiList();
 }
 
 export {
