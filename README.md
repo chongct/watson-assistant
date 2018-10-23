@@ -5,7 +5,7 @@ This is a GraphQL endpoint server which integrates with IBM Watson Assistant API
 
 ## Getting Started
 
-#### Link to application
+#### Live Version
 
 <https://chongct-watson-assistant.herokuapp.com/>
 
@@ -33,7 +33,7 @@ query {
 ```
 
 Mutation operations are used to **create, update and delete intent**. GraphQL mutations to create, update and delete intent are shown below.
-* To create, intent and examples are required fields. Intent should not contain any space.
+* To create, intent and examples are required fields. Intent should not contain any space between words. Any space will be replaced with underscores.
 * To update, intent is a required field.
 * To delete, intent is a required field.
 * The required fields are configured in `schema.graphql` with an exclamation mark.
@@ -83,6 +83,9 @@ mutation {
 
 
 ## Development Log
+
+#### 23 October
+* Final checks
 
 #### 22 October
 * Heroku deployment
