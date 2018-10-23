@@ -97,6 +97,7 @@ async function createIntent(parent, args, context, info) {
 
 async function updateIntent(parent, args, context, info) {
   let { intent, newIntent, newDescription, newExamples } = args;
+  newIntent = newIntent.replace(/\s+/g, '_');
   return await watsonApiCall.apiUpdate(intent, newIntent, newDescription, newExamples);
 }
 
